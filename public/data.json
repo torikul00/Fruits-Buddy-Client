@@ -2,7 +2,7 @@
     {
         "name":"Apple",
         "price": 4,
-        "image":"",
+        "image":"https://i.ibb.co/nP4GG87/apple.jpg",
         "desc":"Apples are an incredibly nutritious fruit that offers multiple health benefits",
         "quantity":5,
         "sup-name":"Herman jhon"
@@ -10,7 +10,7 @@
     {
         "name":"Banana",
         "price": 3,
-        "image":"",
+        "image":"https://i.ibb.co/ypd2x1m/banana.jpg",
         "desc":"One to two bananas per day is considered a moderate intake for most healthy people.",
         "quantity":4,
         "sup-name":"Liam Olivia"
@@ -18,7 +18,7 @@
     {
         "name":"Coconut",
         "price": 5,
-        "image":"",
+        "image":"https://i.ibb.co/QccmDjY/coconut.jpg",
         "desc":"Give you better oral health. The MCFAs found in coconut meat also contain antimicrobial properties.",
         "quantity":3,
         "sup-name":"Liam Olivia"
@@ -26,7 +26,7 @@
     {
         "name":"Guava",
         "price": 3,
-        "image":"",
+        "image":"https://i.ibb.co/WVJj81h/guava.jpg",
         "desc":"Guava is bursting with Vitamin C, which is critical for maintaining immune health. ",
         "quantity":6,
         "sup-name":"Herman jhon"
@@ -34,7 +34,7 @@
     {
         "name":"Grapes",
         "price": 4,
-        "image":"",
+        "image":"https://i.ibb.co/6bwy8nX/grapes.jpg",
         "desc":"Studies have shown that eating grapes doesn't just support your physical health, but also your cognitive health,",
         "quantity":4,
         "sup-name":"Liam Olivia"
@@ -42,7 +42,7 @@
     {
         "name":"Mango",
         "price": 2,
-        "image":"",
+        "image":"https://i.ibb.co/p4QMXDS/mangp.jpg",
         "desc":"Mango is one of the sweetest fruits and lower in fiber than other fruits, so a good rule of thumb is not to exceed two servings a day.",
         "quantity":4,
         "sup-name":"Liam Olivia"
