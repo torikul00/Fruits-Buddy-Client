@@ -2,3 +2,36 @@
     width: 100%;
     height: calc(100vh - 60px);
 }
+.inventory-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 30px 80px;
+
+
+}
+.banner-container{
+    position: relative;
+}
+.banner-sub-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+
+}
+.banner-sub-container h1{
+    font-size: 60px;
+}
+.reg-button{
+    width: 200px;
+    padding: 10px 0px ;
+    margin: 20px 0px;
+    font-size: 20px;
+}
+.banner-sub-container p{
+    font-size: 19px;
+    margin: 20px;
+}
