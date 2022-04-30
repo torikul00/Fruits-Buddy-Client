@@ -1,46 +1,36 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
 import './Form.css'
 import { FcGoogle } from 'react-icons/fc';
-
+import auth from '../../firebase.init';
+import toast from 'react-hot-toast';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useState } from 'react';
 const Login = () => {
-    const [email,setEmail] = useState({value:'',error:''})
-    const [password,setPassword] = useState({value:'',error:''})
-
-    const handleEmail = email => {
-
-        if (/^\S+@\S+\.\S+$/.test(email)) {
-
-            setEmail({ value: email, error: '' })
-        }
-       else if (email === '') {
-            setEmail({ value:'',error:'Email required'})
-        }
-        else {
-            setEmail({ value: '', error: 'Please check your email' })
-        }
-    }
-    const handlePassword = password => {
-        if (password === '') {
-            setPassword({ value:'',error:'Password required'})
-        }
-        else if (password.length < 6) {
-            setPassword({ value: '', error: 'Password is too short ' })
-        }
-        else { setPassword({ value: password, error: '' }) }
-    }
-
-    const handleSubmit = e => {
+    const navigate = useNavigate()
+    const [error,setError] =useState('')
+    const handleSubmit = (e) => {
         e.preventDefault()
-        
+        const email = e.target.email.value
+        const password = e.target.password.value
 
+        signInWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                toast.success('Login succesful')
+                navigate('/')
+            })
+            .catch(() => setError('Password or Email incorrect'))
     }
+
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit}>
                 <h1> Login Here</h1>
-                <input onBlur={(e)=>handleEmail(e.target.value)} type="text" placeholder='Email' required />
-                <input onBlur={(e)=>handlePassword(e.target.value)} type="text" placeholder='Password' required />
+                <input name='email' type="text" placeholder='Email' required />
+                <input name='password' type="text" placeholder='Password' required />
+                {
+                    error && <small style={{color:'red'}}>{ error}</small>
+                }
                 <button className='login-button' type='submit'>Login</button>
                 <p>New user ? <Link className='form-link' to='/signUp'>SignUp </Link> </p>
                 <div className="horizontal-line">

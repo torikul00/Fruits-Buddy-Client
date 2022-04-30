@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -11,11 +11,10 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState({ value: '', error: '' })
     const [
         createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
+        loading
+    
     ] = useCreateUserWithEmailAndPassword(auth);
-
+    const navigate = useNavigate()
     const handleEmail = email => {
 
         if (/^\S+@\S+\.\S+$/.test(email)) {
@@ -55,13 +54,18 @@ const SignUp = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        createUserWithEmailAndPassword(email.value, password.value)
+        if (email.value && password.value && confirmPassword.value) {
+            createUserWithEmailAndPassword(email.value, password.value)
             .then(() => {
-            toast.success('SignUp Successful',{style:{backgroundColor:'black',color:'white'}})
+                toast.success('SignUp Successful', { style: { backgroundColor: 'black', color: 'white' }})
+                navigate('/')
             })
             .catch(() => {
-            console.log('something went wrong')
+           toast.error('something went wrong')
         })
+        }
+      
+       
     }
     return (
         <div className='form-container'>
