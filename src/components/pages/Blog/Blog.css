@@ -1,0 +1,30 @@
+.blog {
+    width: 600px;
+}
+
+.blog h2 {
+    margin: 20px 0px;
+    letter-spacing: 0.6px;
+    word-spacing: 4px;
+    color: cadetblue;
+}
+
+.blog p {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.781);
+}
+
+.blog hr {
+    margin: 20px 0px;
+}
+.blog-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+}
+
+@media (max-width:600px) {
+    
+}

@@ -30,6 +30,11 @@
     padding: 10px 0px ;
     margin: 20px 0px;
     font-size: 20px;
+    background-color:#006E7F ;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
 }
 .banner-sub-container p{
     font-size: 19px;

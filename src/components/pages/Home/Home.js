@@ -1,14 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from '../../Card/Card';
 import useItems from '../../hooks/useItems';
 import banner from '../../images/banner.jpg'
+import banner2 from '../../images/banner2.jpg'
 import './Home.css'
 
 
 const Home = () => {
 
     const [items] = useItems()
-    console.log(items)
+    const navigate = useNavigate()
+
 
     return (
         <>
@@ -17,7 +20,7 @@ const Home = () => {
                 <div className='banner-sub-container'>
                     <h1>Welcome to Fruits Buddy</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, voluptatibus, id vitae laboriosam reprehenderit officia, tempora nobis accusantium adipisci autem odio soluta placeat quasi est quas. Accusantium, voluptas. Enim, libero?</p>
-                    <button className='reg-button'>Registered Now</button>
+                    <button onClick={()=>navigate('/signUp')} className='reg-button'>Register Now</button>
 
                 </div>
             </div>
@@ -28,6 +31,9 @@ const Home = () => {
                 }
             </div>
 
+            <div>
+                <img src={banner2} alt="" />
+            </div>
 
         </>
     );
