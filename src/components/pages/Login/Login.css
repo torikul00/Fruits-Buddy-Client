@@ -27,7 +27,7 @@ form h1 {
     margin-bottom: 15px
 }
 
-.form-button {
+.login-button {
     width: 100%;
     padding: 8px 0px;
     background-color: #006E7F;
@@ -37,19 +37,43 @@ form h1 {
     cursor: pointer;
     margin-bottom: 10px;
 }
-.form-link{
+
+.form-link {
     text-decoration: none;
     color: #006E7F;
     margin: 0px 5px;
 }
-.horizontal-line{
+
+.horizontal-line {
     display: flex;
     align-items: center;
     margin: 20px 0px;
 }
-.line{
+
+.line {
     width: 100%;
-    height: 2px ;
+    height: 2px;
     background-color: rgba(0, 0, 0, 0.247);
     margin: 0px 5px;
+}
+
+.google-button {
+    width: 100%;
+    padding: 8px 0px;
+    background-color: white;
+    border: 1px solid #006e7fad;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    color: #006E7F;
+    margin-bottom: 10px;
+    position: relative;
+    
+}
+
+.google-icon{
+    position: absolute;
+    left: 100px;
+    bottom: 4px;
+    font-size: 30px;
 }
