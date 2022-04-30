@@ -8,6 +8,7 @@ import Inventory from './components/pages/Inventory/Inventory';
 import Login from './components/pages/Login/Login';
 import Navbar from './components/pages/Navbar/Navbar';
 import SignUp from './components/pages/SignUp/SignUp';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

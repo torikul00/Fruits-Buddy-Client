@@ -47,7 +47,9 @@ const SignUp = () => {
         }
     }
     if (loading) {
-        return  <Spinner animation="border" variant="primary" />
+        return <div className='spinner'>
+             <Spinner  animation="border" variant="primary" />
+                  </div>
     }
 
     const handleSubmit = e => {
