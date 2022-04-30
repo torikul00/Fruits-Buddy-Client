@@ -8,12 +8,17 @@ import Inventory from './components/pages/Inventory/Inventory';
 import Login from './components/pages/Login/Login';
 import Navbar from './components/pages/Navbar/Navbar';
 import SignUp from './components/pages/SignUp/SignUp';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/blog' element={<Blog />} />
@@ -22,7 +27,7 @@ function App() {
         <Route path='/inventory' element={<Inventory />} />
       </Routes>
       <Footer />
-      
+
 
     </div>
   );

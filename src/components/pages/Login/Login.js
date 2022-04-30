@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css'
+import './Form.css'
 import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {

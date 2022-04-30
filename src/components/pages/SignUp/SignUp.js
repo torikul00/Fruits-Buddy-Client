@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Spinner } from 'react-bootstrap';
+
+import toast from 'react-hot-toast';
 const SignUp = () => {
     const [email, setEmail] = useState({ value: '', error: '' })
     const [password, setPassword] = useState({ value: '', error: '' })
@@ -48,13 +49,19 @@ const SignUp = () => {
     }
     if (loading) {
         return <div className='spinner'>
-             <Spinner  animation="border" variant="primary" />
+                <p>Loading ...</p>
                   </div>
     }
 
     const handleSubmit = e => {
         e.preventDefault()
         createUserWithEmailAndPassword(email.value, password.value)
+            .then(() => {
+            toast.success('SignUp Successful',{style:{backgroundColor:'black',color:'white'}})
+            })
+            .catch(() => {
+            console.log('something went wrong')
+        })
     }
     return (
         <div className='form-container'>
