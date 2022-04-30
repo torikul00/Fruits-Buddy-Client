@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Spinner } from 'react-bootstrap';
 const SignUp = () => {
     const [email, setEmail] = useState({ value: '', error: '' })
     const [password, setPassword] = useState({ value: '', error: '' })
     const [confirmPassword, setConfirmPassword] = useState({ value: '', error: '' })
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     const handleEmail = email => {
-        
+
         if (/^\S+@\S+\.\S+$/.test(email)) {
 
             setEmail({ value: email, error: '' })
         }
-       else if (email === '') {
-            setEmail({ value:'',error:'Email required'})
+        else if (email === '') {
+            setEmail({ value: '', error: 'Email required' })
         }
         else {
             setEmail({ value: '', error: 'Invalid Email' })
@@ -23,7 +31,7 @@ const SignUp = () => {
 
     const handlePassword = password => {
         if (password === '') {
-            setPassword({ value:'',error:'Password required'})
+            setPassword({ value: '', error: 'Password required' })
         }
         else if (password.length < 6) {
             setPassword({ value: '', error: 'Password is too short ' })
@@ -38,12 +46,13 @@ const SignUp = () => {
             setConfirmPassword({ value: '', error: 'Password does not Match' })
         }
     }
-
+    if (loading) {
+        return  <Spinner animation="border" variant="primary" />
+    }
 
     const handleSubmit = e => {
         e.preventDefault()
-
-
+        createUserWithEmailAndPassword(email.value, password.value)
     }
     return (
         <div className='form-container'>
