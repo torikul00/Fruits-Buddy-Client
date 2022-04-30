@@ -21,7 +21,7 @@ const Blog = () => {
                 </div>
                 <div className="blog">
                     <h2>What is the purpose of JWT and how it works ?</h2>
-                    <p>JWT- stand for Json Web Token . </p> <hr />
+                    <p>JWT- stand for Json Web Token .jwt use for pass identity of users between identity provider and and services provider.When a user login completed ,at the same time ,A client application send web token to the backend API .  </p> <hr />
                 </div>
             </div>
         </div>
