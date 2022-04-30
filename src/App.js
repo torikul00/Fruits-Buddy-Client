@@ -10,6 +10,7 @@ import Navbar from './components/pages/Navbar/Navbar';
 import SignUp from './components/pages/SignUp/SignUp';
 
 import { Toaster } from 'react-hot-toast';
+import ForgotPassword from './components/pages/ForgotPass/ForgotPassword';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signUp' element={<SignUp />} />
+        <Route path='/forgotPassword' element={<ForgotPassword />} />
         <Route path='/inventory' element={<Inventory />} />
       </Routes>
       <Footer />

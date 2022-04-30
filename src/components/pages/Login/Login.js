@@ -6,9 +6,11 @@ import auth from '../../firebase.init';
 import toast from 'react-hot-toast';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
+import useSocialLogin from '../../hooks/useSocialLogin';
 const Login = () => {
     const navigate = useNavigate()
-    const [error,setError] =useState('')
+    const [error, setError] = useState('')
+    const {signInWithGoogle}  = useSocialLogin()
     const handleSubmit = (e) => {
         e.preventDefault()
         const email = e.target.email.value
@@ -26,11 +28,12 @@ const Login = () => {
         <div className='form-container'>
             <form onSubmit={handleSubmit}>
                 <h1> Login Here</h1>
-                <input name='email' type="text" placeholder='Email' required />
-                <input name='password' type="text" placeholder='Password' required />
+                <input name='email' type="email" placeholder='Email' required />
+                <input name='password' type="password" placeholder='Password' required />
                 {
-                    error && <small style={{color:'red'}}>{ error}</small>
+                    error && <p style={{color:'red'}}>{ error}</p>
                 }
+                <Link className='forgot-link' to='/forgotPassword'>Forgot password ? </Link>
                 <button className='login-button' type='submit'>Login</button>
                 <p>New user ? <Link className='form-link' to='/signUp'>SignUp </Link> </p>
                 <div className="horizontal-line">
@@ -38,7 +41,7 @@ const Login = () => {
                     <p>OR</p>
                     <div className='line'></div>
                 </div>
-                <button className='google-button' type='submit'><FcGoogle className='google-icon' />  Google</button>
+                <button onClick={signInWithGoogle} className='google-button' ><FcGoogle className='google-icon' />  Google</button>
             </form>
         </div>
     );

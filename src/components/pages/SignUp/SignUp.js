@@ -5,6 +5,8 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 import toast from 'react-hot-toast';
+import { sendEmailVerification } from 'firebase/auth';
+import useSocialLogin from '../../hooks/useSocialLogin';
 const SignUp = () => {
     const [email, setEmail] = useState({ value: '', error: '' })
     const [password, setPassword] = useState({ value: '', error: '' })
@@ -12,8 +14,9 @@ const SignUp = () => {
     const [
         createUserWithEmailAndPassword,
         loading
-    
+
     ] = useCreateUserWithEmailAndPassword(auth);
+    const {signInWithGoogle}  = useSocialLogin()
     const navigate = useNavigate()
     const handleEmail = email => {
 
@@ -48,24 +51,32 @@ const SignUp = () => {
     }
     if (loading) {
         return <div className='spinner'>
-                <p>Loading ...</p>
-                  </div>
+            <p>Loading ...</p>
+        </div>
     }
 
     const handleSubmit = e => {
         e.preventDefault()
         if (email.value && password.value && confirmPassword.value) {
+
+           
+        //    Creating a new user
             createUserWithEmailAndPassword(email.value, password.value)
-            .then(() => {
-                toast.success('SignUp Successful', { style: { backgroundColor: 'black', color: 'white' }})
-                navigate('/')
-            })
-            .catch(() => {
-           toast.error('something went wrong')
-        })
+                .then(() => {
+                    // sent email verification 
+                    sendEmailVerification(auth.currentUser)
+                    .then(() => {
+                        alert('email verification sent')
+                    });
+                    toast.success('SignUp Successful', { style: { backgroundColor: 'black', color: 'white' } })
+                    navigate('/')
+                })
+                .catch(() => {
+                    toast.error('something went wrong')
+                })
         }
-      
-       
+
+
     }
     return (
         <div className='form-container'>
@@ -75,11 +86,11 @@ const SignUp = () => {
                 {
                     email?.error && <small style={{ color: 'red' }}>{email.error}</small>
                 }
-                <input onBlur={(e) => handleEmail(e.target.value)} type="text" placeholder='Email' required />
+                <input onBlur={(e) => handleEmail(e.target.value)} type="email" placeholder='Email' required />
                 {
                     password?.error && <small style={{ color: 'red' }}>{password.error}</small>
                 }
-                <input onBlur={(e) => handlePassword(e.target.value)} type="text" placeholder='Password' required />
+                <input onBlur={(e) => handlePassword(e.target.value)} type="password" placeholder='Password' required />
                 {
                     confirmPassword?.error && <small style={{ color: 'red' }}>{confirmPassword.error}</small>
                 }
@@ -91,7 +102,7 @@ const SignUp = () => {
                     <p>OR</p>
                     <div className='line'></div>
                 </div>
-                <button className='google-button' type='submit'>  <FcGoogle className='google-icon' /> Google</button>
+                <button onClick={signInWithGoogle} className='google-button'>  <FcGoogle className='google-icon' /> Google</button>
             </form>
         </div>
     );
