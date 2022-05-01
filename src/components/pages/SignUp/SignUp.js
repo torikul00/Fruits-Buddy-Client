@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-
 import toast from 'react-hot-toast';
 import { sendEmailVerification } from 'firebase/auth';
 import useSocialLogin from '../../hooks/useSocialLogin';
@@ -19,6 +18,8 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate()
     const { signInWithGoogle } = useSocialLogin()
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
    
    
     const handleEmail = email => {
@@ -56,7 +57,7 @@ const SignUp = () => {
         return <p>loading ..</p>
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
     const handleSubmit = e => {
@@ -99,7 +100,7 @@ const SignUp = () => {
                 {
                     confirmPassword?.error && <small style={{ color: 'red' }}>{confirmPassword.error}</small>
                 }
-                <input onBlur={(e) => handleConfirmPassword(e.target.value)} type="text" placeholder='Confirm Password' required />
+                <input onBlur={(e) => handleConfirmPassword(e.target.value)} type="password" placeholder='Confirm Password' required />
                 <button className='login-button' type='submit'>SignUp</button>
                 <p>Already Registered ? <Link className='form-link' to='/login'>Login </Link> </p>
                 <div className="horizontal-line">
