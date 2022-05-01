@@ -24,7 +24,16 @@ const Navbar = () => {
             <div><h2 onClick={()=>navigate('/')} className='logo'>Fruits Buddy</h2></div>
                 <div className='navbar-links'>
                     <Link to="/blog">Blog</Link>
-                    {user ? <button onClick={handleSignOut} className='nav-button'>Logout</button> :
+                    {user ?
+                        <>
+                        
+                        <Link to='additem'>Manage Items</Link>
+                         <Link to='addItem'>Add Item</Link>
+                         <Link to='myItems'>My items</Link>
+                         <button onClick={handleSignOut} className='nav-button'>Logout</button>
+                        </>
+                        
+                      :
                         
                  <button className='nav-button' onClick={() => navigate('/login')}>Login</button>
                         
