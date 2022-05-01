@@ -13,11 +13,14 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState({ value: '', error: '' })
     const [
         createUserWithEmailAndPassword,
+        user,
         loading
 
     ] = useCreateUserWithEmailAndPassword(auth);
-    const {signInWithGoogle}  = useSocialLogin()
     const navigate = useNavigate()
+    const { signInWithGoogle } = useSocialLogin()
+   
+   
     const handleEmail = email => {
 
         if (/^\S+@\S+\.\S+$/.test(email)) {
@@ -50,12 +53,14 @@ const SignUp = () => {
         }
     }
     if (loading) {
-        return <div className='spinner'>
-            <p>Loading ...</p>
-        </div>
+        return <p>loading ..</p>
+    }
+    if (user) {
+        navigate('/')
     }
 
     const handleSubmit = e => {
+       
         e.preventDefault()
         if (email.value && password.value && confirmPassword.value) {
 
@@ -69,7 +74,7 @@ const SignUp = () => {
                         alert('email verification sent')
                     });
                     toast.success('SignUp Successful', { style: { backgroundColor: 'black', color: 'white' } })
-                    navigate('/')
+                    
                 })
                 .catch(() => {
                     toast.error('something went wrong')

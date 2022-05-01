@@ -11,6 +11,7 @@ import SignUp from './components/pages/SignUp/SignUp';
 
 import { Toaster } from 'react-hot-toast';
 import ForgotPassword from './components/pages/ForgotPass/ForgotPassword';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -26,7 +27,11 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/forgotPassword' element={<ForgotPassword />} />
-        <Route path='/inventory' element={<Inventory />} />
+        <Route path='/inventory' element={
+          <RequireAuth>
+             <Inventory />
+          </RequireAuth>
+        } />
       </Routes>
       <Footer />
 
