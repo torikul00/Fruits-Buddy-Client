@@ -8,7 +8,6 @@ import Inventory from './components/pages/Inventory/Inventory';
 import Login from './components/pages/Login/Login';
 import Navbar from './components/pages/Navbar/Navbar';
 import SignUp from './components/pages/SignUp/SignUp';
-
 import { Toaster } from 'react-hot-toast';
 import ForgotPassword from './components/pages/ForgotPass/ForgotPassword';
 import RequireAuth from './components/RequireAuth/RequireAuth';

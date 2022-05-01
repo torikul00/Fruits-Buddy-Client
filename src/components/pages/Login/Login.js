@@ -1,5 +1,5 @@
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Form.css'
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
@@ -10,7 +10,9 @@ import useSocialLogin from '../../hooks/useSocialLogin';
 const Login = () => {
     const navigate = useNavigate()
     const [error, setError] = useState('')
-    const {signInWithGoogle}  = useSocialLogin()
+    const { signInWithGoogle } = useSocialLogin()
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const handleSubmit = (e) => {
         e.preventDefault()
         const email = e.target.email.value
@@ -19,7 +21,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
                 toast.success('Login succesful')
-                navigate('/')
+                navigate(from, { replace: true });
             })
             .catch(() => setError('Password or Email incorrect'))
     }
