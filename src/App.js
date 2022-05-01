@@ -11,6 +11,7 @@ import { Toaster } from 'react-hot-toast';
 import ForgotPassword from './components/pages/ForgotPass/ForgotPassword';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import SignleFruit from './components/pages/Inventory/SignleFruit';
+import ManageItems from './components/pages/ManageItems/ManageItems';
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
              <SignleFruit />
           </RequireAuth>
         } />
+        <Route path='/manageItems' element={
+          <RequireAuth>
+            <ManageItems />
+          </RequireAuth>
+          } />
       </Routes>
       <Footer />
 

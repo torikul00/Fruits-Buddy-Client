@@ -27,7 +27,7 @@ const Navbar = () => {
                     {user ?
                         <>
                         
-                        <Link to='additem'>Manage Items</Link>
+                        <Link to='manageItems'>Manage Items</Link>
                          <Link to='addItem'>Add Item</Link>
                          <Link to='myItems'>My items</Link>
                          <button onClick={handleSignOut} className='nav-button'>Logout</button>
