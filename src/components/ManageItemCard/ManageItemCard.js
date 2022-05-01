@@ -6,7 +6,7 @@ const ManageItemCard = ({item}) => {
     return (
         <div className='card-info-container'>
             <div className='img'>
-                <img src={image} alt="" />
+                <img src={image ? image : 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640'}alt="" />
             </div>
             <div className='single-item-info'>
                 <h2>{name}</h2>
