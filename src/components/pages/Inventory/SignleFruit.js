@@ -46,7 +46,8 @@ const SignleFruit = () => {
 
     }
     const handleDelever = () => {
-        const totalQuantity = parseInt(fruit.quantity) - 1
+        if (fruit.quantity > 1) {
+            const totalQuantity = parseInt(fruit.quantity) - 1
         const updateQuantity = { quantity: totalQuantity }
         fetch(`http://localhost:5000/fruit/${id}`, {
             method: 'PUT',
@@ -61,6 +62,10 @@ const SignleFruit = () => {
                 setisReload(!isReload)
                window.alert('1 item delevered seccessful')
             })
+        }
+        else {
+            window.alert('Insufficient Item')
+        }
     }
     return (
         <div className='fruit-container'>

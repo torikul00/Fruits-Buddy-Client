@@ -13,9 +13,9 @@ const Card = ({ item }) => {
             <img src={image} alt="" />
             <h2>{name}</h2>
             <p>{desc}</p>   
-            <p>Price : $ {price}</p>
-            <p>Quantity : {quantity}</p>
-            <p> Supplier : { sup_name}</p>
+            <p><strong>Price : $ {price}</strong></p>
+            <p><strong>Quantity : {quantity}</strong></p>
+            <p><strong> Supplier : { sup_name}</strong></p>
             <button onClick={()=>handleNavigate(_id)} className='update-button'>Update </button>
         </div>
     );

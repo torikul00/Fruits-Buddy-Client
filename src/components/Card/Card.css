@@ -8,6 +8,7 @@
 }
 .card p {
     color: rgba(0, 0, 0, 0.836);
+    padding: 2px 0px;
 }
 .card h2 {
     margin: 10px 0px;

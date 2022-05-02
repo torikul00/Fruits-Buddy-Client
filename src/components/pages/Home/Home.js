@@ -27,7 +27,7 @@ const Home = () => {
 
             <div className="inventory-items">
                 {
-                    items.slice(0,6).map(item => <Card item={item} key={item.id} />)
+                    items.slice(0,6).map(item => <Card item={item} key={item._id} />)
                 }
             </div>
 
