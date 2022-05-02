@@ -29,7 +29,7 @@ const AddItem = () => {
 
     return (
         <div className='add-item-container'>
-            <form onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <h1>Add new item</h1>
                 <input name='name' autoComplete='off' type="text" placeholder='Item Name'  />
                 <input name='price' type="number" placeholder='Price' />

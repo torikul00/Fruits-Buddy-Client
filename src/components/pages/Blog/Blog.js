@@ -12,7 +12,7 @@ const Blog = () => {
                 </div>
                 <div className="blog">
                     <h2>When should you use NodeJs and When should you use mongoDB ?</h2>
-                    <p>When i nedd to call api from client side ,then i have to use NodeJs for creating API . When we need to store data ,then we use mongodb for storing data
+                    <p>When i need to call api from client side ,then i have to use NodeJs for creating API . When we need to store data ,then we use mongodb for storing data
                     without NodeJs we can not connect with mongodb database system.</p> <hr />
                 </div>
                 <div className="blog">
