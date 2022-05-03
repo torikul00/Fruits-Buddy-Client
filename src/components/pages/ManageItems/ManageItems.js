@@ -10,7 +10,6 @@ const ManageItems = () => {
             const url = `http://localhost:5000/fruit/${id}`
             fetch(url, {
                 method: 'DELETE',
-
             })
                 .then(res => res.json())
                 .then(data => {
@@ -21,9 +20,7 @@ const ManageItems = () => {
                         setItems(restItem)
                     }
                 })
-
         }
-
     }
     return (
         <div className="card-container">
@@ -33,5 +30,4 @@ const ManageItems = () => {
         </div>
     );
 };
-
 export default ManageItems;

@@ -70,7 +70,7 @@ const SignleFruit = () => {
     return (
         <div className='fruit-container'>
             <div className="fruit-info">
-                <img src={fruit.image} alt="" />
+                <img src={fruit.image?fruit.image :'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640'} alt="" />
                 <h1>{fruit.name}</h1>
                 <p>{fruit.desc}</p>
                 <br />

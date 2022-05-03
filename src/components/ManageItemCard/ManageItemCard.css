@@ -18,9 +18,22 @@
     color: white;
     cursor: pointer;
 }
+.updt-button {
+    margin: 10px;
+    padding: 6px 20px;
+    border: none;
+    background-color: #006E7F;
+    color: white;
+    cursor: pointer;
+}
 .single-item-info{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

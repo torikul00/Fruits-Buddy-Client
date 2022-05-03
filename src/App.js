@@ -13,6 +13,7 @@ import RequireAuth from './components/RequireAuth/RequireAuth';
 import SignleFruit from './components/pages/Inventory/SignleFruit';
 import ManageItems from './components/pages/ManageItems/ManageItems';
 import AddItem from './components/pages/AddItem/AddItem';
+import MyItems from './components/pages/MyItems/MyItems';
 
 function App() {
   return (
@@ -41,6 +42,11 @@ function App() {
         <Route path='/addItem' element={
           <RequireAuth>
             <AddItem />
+          </RequireAuth>
+          } />
+        <Route path='/myItems' element={
+          <RequireAuth>
+           <MyItems />
           </RequireAuth>
           } />
       </Routes>
