@@ -14,6 +14,7 @@ import SignleFruit from './components/pages/Inventory/SignleFruit';
 import ManageItems from './components/pages/ManageItems/ManageItems';
 import AddItem from './components/pages/AddItem/AddItem';
 import MyItems from './components/pages/MyItems/MyItems';
+import NotFound from './components/pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -31,24 +32,25 @@ function App() {
         <Route path='/forgotPassword' element={<ForgotPassword />} />
         <Route path='/fruit/:id' element={
           <RequireAuth>
-             <SignleFruit />
+            <SignleFruit />
           </RequireAuth>
         } />
         <Route path='/manageItems' element={
           <RequireAuth>
             <ManageItems />
           </RequireAuth>
-          } />
+        } />
         <Route path='/addItem' element={
           <RequireAuth>
             <AddItem />
           </RequireAuth>
-          } />
+        } />
         <Route path='/myItems' element={
           <RequireAuth>
-           <MyItems />
+            <MyItems />
           </RequireAuth>
-          } />
+        } />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
 

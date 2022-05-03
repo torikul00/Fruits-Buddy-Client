@@ -80,7 +80,7 @@ const SignleFruit = () => {
 
                 <form onSubmit={handleQuantity} className="update-item">
                     <input  className='quantity-input' type="number" placeholder='Add Quantity' name='quantity' />
-                    <button type='submit' className='quantity-update-button'>Add</button>
+                    <button type='submit' className='quantity-update-button'>Restock Item</button>
 
                 </form>
                 <button onClick={handleDelever} className='delevery-button'>Delevery</button>
