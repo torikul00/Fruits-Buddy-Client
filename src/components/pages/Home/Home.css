@@ -2,41 +2,98 @@
     width: 100%;
     height: calc(100vh - 60px);
 }
-.inventory-items{
+
+.inventory-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    padding: 30px 80px;
-
-
+    padding: 0px 80px;
 }
-.banner-container{
+
+.banner-container {
     position: relative;
 }
-.banner-sub-container{
+
+.banner-sub-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-
 }
-.banner-sub-container h1{
+
+.banner-sub-container h1 {
     font-size: 60px;
 }
-.reg-button{
+
+.reg-button {
     width: 200px;
-    padding: 10px 0px ;
+    padding: 10px 0px;
     margin: 20px 0px;
     font-size: 20px;
-    background-color:#006E7F ;
+    background-color: #006E7F;
     border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
 }
-.banner-sub-container p{
+
+.banner-sub-container p {
     font-size: 19px;
     margin: 20px;
+}
+
+.manage-inven-button {
+    width: 200px;
+    display: block;
+    margin: 40px auto;
+    padding: 10px 0px;
+    cursor: pointer;
+    border: none;
+    background-color: #006E7F;
+    color: white;
+    font-size: 18px;
+}
+.carousel-title{
+    text-align: center;
+    margin-top: 50px;
+    color: #EB5353;
+}
+.carousel-container {
+    width: 100%;
+   
+}
+.carousel {
+    margin-bottom: 50px;
+}
+.carousel-item {
+    box-shadow: -1px 2px 19px -10px rgba(0, 0, 0, 0.79);
+    -webkit-box-shadow: -1px 2px 19px -10px rgba(0, 0, 0, 0.79);
+    -moz-box-shadow: -1px 2px 19px -10px rgba(0, 0, 0, 0.79);
+    height: 400px;
+    padding: 20px;
+    margin: 40px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.carousel-item button{
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 0px;
+    background-color: #EB5353;
+    border: none  ;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.carousel img {
+    width: 50%;
+    display: block;
+    margin: 20px auto;
 }

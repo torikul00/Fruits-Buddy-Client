@@ -7,7 +7,6 @@ nav {
     height: 60px;
     position: sticky;
     top: 0;
-    
 }
 .logo{
     cursor: pointer;
@@ -19,7 +18,7 @@ nav {
     color: black;
     text-decoration: none;
     margin: 0px 20px;
-    letter-spacing: 1px;
+    
     color: white;
 }
 .nav-button{
