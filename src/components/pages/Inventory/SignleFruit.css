@@ -4,17 +4,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .fruit-info{
-    border: 1px solid black;
     width: 500px;
     padding: 20px;
+    -webkit-box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.6); 
+box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.6);
 }
 .fruit-info p {
-    font-size: 22px;
+    font-size: 18px;
+    padding: 5px 5px;
+    color: rgba(0, 0, 0, 0.747);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.192);
+    background-color: rgba(0, 0, 0, 0.048);
+}
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .fruit-info img {
-    width: 100%;
+    width: 70%;
+}
+.fruit-info h2 {
+    text-align: center;
+    margin: 10px 0px;
 }
 .update-item{
     width: 100%;

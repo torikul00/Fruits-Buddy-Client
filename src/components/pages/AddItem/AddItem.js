@@ -34,7 +34,7 @@ const AddItem = () => {
                 <h1>Add new item</h1>
                 <input name='name' autoComplete='off' type="text" placeholder='Item Name' required />
                 <input name='price' type="number" placeholder='Price' required />
-                <input name='quantity' type="number" placeholder='Quantity' required />
+                <input name='quantity' type="number" placeholder='Quantity of Sacks' required />
                 <input name='imgURL' autoComplete='off' type="text" placeholder='Image URL' />
                 <input name='supplier' autoComplete='off' type="text" placeholder='Supplier' required />
                 <textarea autoComplete='off' name="desc" placeholder='Description' required cols="30" rows="5"></textarea>
