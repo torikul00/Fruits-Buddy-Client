@@ -16,7 +16,7 @@ const ManageItemCard = ({ item, handleItemDelete }) => {
             <div className='single-item-info'>
                 <h2>{name}</h2>
                 <p>Price : ${price}</p>
-                <p>Quantity : {quantity}</p>
+                <p>Quantity : {quantity} sack</p>
                 <div className="buttons">
                 <button onClick={() => handleItemDelete(_id)} className='delete-button'>Delete</button>
                 <button onClick={() => handleItemUpdate(_id)} className='updt-button'>Update</button>

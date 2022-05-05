@@ -6,6 +6,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { sendEmailVerification } from 'firebase/auth';
 import useSocialLogin from '../../hooks/useSocialLogin';
+import Spinner from '../../Spinner/Spinner';
 const SignUp = () => {
     const [email, setEmail] = useState({ value: '', error: '' })
     const [password, setPassword] = useState({ value: '', error: '' })
@@ -14,13 +15,11 @@ const SignUp = () => {
         createUserWithEmailAndPassword,
         user,
         loading
-
     ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate()
     const { signInWithGoogle } = useSocialLogin()
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-   
    
     const handleEmail = email => {
 
@@ -35,7 +34,6 @@ const SignUp = () => {
             setEmail({ value: '', error: 'Invalid Email' })
         }
     }
-
     const handlePassword = password => {
         if (password === '') {
             setPassword({ value: '', error: 'Password required' })
@@ -54,28 +52,29 @@ const SignUp = () => {
         }
     }
     if (loading) {
-        return <p>loading ..</p>
+
+        
+        return <Spinner />
+       
+
     }
     if (user) {
         navigate(from, { replace: true });
     }
-
     const handleSubmit = e => {
        
         e.preventDefault()
         if (email.value && password.value && confirmPassword.value) {
 
-           
         //    Creating a new user
             createUserWithEmailAndPassword(email.value, password.value)
                 .then(() => {
                     // sent email verification 
                     sendEmailVerification(auth.currentUser)
                     .then(() => {
-                        alert('email verification sent')
+                        alert('Email verification sent')
                     });
                     toast.success('SignUp Successful', { style: { backgroundColor: 'black', color: 'white' } })
-                    
                 })
                 .catch(() => {
                     toast.error('something went wrong')
@@ -87,6 +86,7 @@ const SignUp = () => {
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit} className='form'>
+            
                 <h1> SignUp Here</h1>
 
                 {

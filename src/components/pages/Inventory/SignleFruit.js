@@ -69,7 +69,7 @@ const SignleFruit = () => {
                 <p>{fruit.desc}</p>
                 <br />
                 <p>Price : $ {fruit.price}</p>
-                <p>Quantity : {fruit.quantity}</p>
+                <p>Quantity : {fruit.quantity} Sacks</p>
                 <p> Supplier : {fruit.sup_name}</p>
                 <p>ID : {fruit._id}</p>
 

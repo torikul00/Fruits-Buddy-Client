@@ -1,23 +1,24 @@
-.add-item-container{
+.add-item-container {
     width: 100%;
     height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.add-button{
+
+.add-button {
     display: block;
     margin: 10px auto;
     width: 150px;
-    padding:  8px 0px;
+    padding: 8px 0px;
     font-size: 16px;
     border: none;
     background-color: #006E7F;
     color: white;
     cursor: pointer;
-
 }
-.add-item-container textarea{
+
+.add-item-container textarea {
     width: 100%;
     padding: 10px;
 }

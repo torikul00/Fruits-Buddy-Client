@@ -14,7 +14,7 @@ const Card = ({ item }) => {
             <h2>{name}</h2>
             <p>{desc}</p>   
             <p><strong>Price : $ {price}</strong></p>
-            <p><strong>Quantity : {quantity}</strong></p>
+            <p><strong>Quantity : {quantity} Sacks</strong></p>
             <p><strong> Supplier : { sup_name}</strong></p>
             <button onClick={()=>handleNavigate(_id)} className='update-button'>Update </button>
         </div>

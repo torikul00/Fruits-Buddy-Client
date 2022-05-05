@@ -4,36 +4,48 @@ import './Form.css'
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import toast from 'react-hot-toast';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useState } from 'react';
 import useSocialLogin from '../../hooks/useSocialLogin';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Spinner from '../../Spinner/Spinner';
 const Login = () => {
     const navigate = useNavigate()
-    const [error, setError] = useState('')
+
     const { signInWithGoogle } = useSocialLogin()
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
+    if (loading) {
+        return <Spinner />
+    }
+
+    if (user) {
+
+        toast.success('Login succesful',{id:'login'})
+        navigate(from, { replace: true });
+        
+    }
     const handleSubmit = (e) => {
+        <Spinner />
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
-
-        signInWithEmailAndPassword(auth, email, password)
-            .then(() => {
-                toast.success('Login succesful')
-                navigate(from, { replace: true });
-            })
-            .catch(() => setError('Password or Email incorrect'))
+        signInWithEmailAndPassword(email, password)
     }
 
     return (
         <div className='form-container'>
-            <form  onSubmit={handleSubmit} className='form'>
+            <form onSubmit={handleSubmit} className='form'>
                 <h1> Login Here</h1>
                 <input name='email' type="email" placeholder='Email' required />
                 <input name='password' type="password" placeholder='Password' required />
                 {
-                    error && <p style={{color:'red'}}>{ error}</p>
+                    error && <p style={{ color: 'red', padding: '10px 0px' }}>Wrong email or password</p>
                 }
                 <Link className='forgot-link' to='/forgotPassword'>Forgot password ? </Link>
                 <button className='login-button' type='submit'>Login</button>
