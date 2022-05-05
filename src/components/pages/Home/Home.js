@@ -8,14 +8,18 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Torikul from '../../images/torikul.jpg'
 import Spinner from '../../Spinner/Spinner';
+import amazon from '../../images/logos/amazon.png'
+import target from '../../images/logos/target.png'
+import gebber from '../../images/logos/gebber.png'
+import walmart from '../../images/logos/walmart.png'
 const Home = () => {
-  const [items, setItems,loading] = useItems()
+  const [items, setItems, loading] = useItems()
   const navigate = useNavigate()
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      
+
       items: 5
     },
     desktop: {
@@ -32,9 +36,9 @@ const Home = () => {
     }
   };
   console.log(loading)
-  
+
   if (loading) {
-   return <Spinner />
+    return <Spinner />
   }
   if (!loading) {
     return (
@@ -43,9 +47,8 @@ const Home = () => {
           <img className='banner' src={banner} alt="" />
           <div className='banner-sub-container'>
             <h1>Welcome to Fruits Buddy</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, voluptatibus, id vitae laboriosam reprehenderit officia, tempora nobis accusantium adipisci autem odio soluta placeat quasi est quas. Accusantium, voluptas. Enim, libero?</p>
+            <p>Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. Eating a diet high in fruits and vegetables can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.</p>
             <button onClick={() => navigate('/signUp')} className='reg-button'>Register Now</button>
-
           </div>
         </div>
 
@@ -55,10 +58,6 @@ const Home = () => {
           }
         </div>
 
-
-
-
-
         <button onClick={() => navigate('/manageItems')} className='manage-inven-button'>Manage Inventories</button>
 
         <div className='carousel-container' >
@@ -67,6 +66,7 @@ const Home = () => {
             className='carousel'
             infinite
             draggable
+            autoPlay
             customTransition="all 1s linear"
             autoPlaySpeed={2000}
             showDots={true}
@@ -104,6 +104,28 @@ const Home = () => {
               </div>
             </div>
           </Carousel>
+        </div>
+
+        <h1 className='partner-title'>OUR PARTNER COMPANIES</h1>
+        <div className="companies-container">
+
+          <div className="company">
+            <img className='walmart' src={walmart} alt="" />
+          </div>
+
+          <div className="company">
+          <img className='target' src={target} alt="" />
+          </div>
+
+          <div className="company">
+            <img className='gebber' src={gebber} alt="" />
+          </div>
+
+          <div className="company">
+          
+            <img className='amazon' src={amazon} alt="" />
+          </div>
+
         </div>
 
 

@@ -25,7 +25,7 @@ const ManageItems = () => {
                 })
         }
     }
-    console.log(loading)
+
        
   
    if(loading){
