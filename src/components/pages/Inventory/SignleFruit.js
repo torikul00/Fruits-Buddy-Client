@@ -26,6 +26,10 @@ const SignleFruit = () => {
             e.target.reset()
             return
         }
+        else if (quantity == '') {
+            alert('Input Can not be Empty')
+            return
+        }
 
         else {
             const totalQuantity = parseInt(fruit.quantity) + parseInt(quantity)
@@ -60,7 +64,7 @@ const SignleFruit = () => {
                 .then(() => {
 
                     setisReload(!isReload)
-                    window.alert('1 item delevered seccessful')
+                    window.alert('1 sack delevered seccessful')
                 })
         }
         else {

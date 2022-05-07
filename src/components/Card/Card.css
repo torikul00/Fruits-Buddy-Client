@@ -1,23 +1,27 @@
-.card{
-    width: 100% ;
-   border-radius: 5px;
+.card {
+    width: 100%;
+    border-radius: 5px;
     padding: 20px;
     position: relative;
     height: 500px;
     background-color: #006e7f83;
-  
+
 }
+
 .card p {
     color: rgba(0, 0, 0, 0.836);
     padding: 2px 0px;
 }
+
 .card h2 {
     margin: 10px 0px;
 }
+
 .card img {
     width: 100%;
 }
-.update-button{
+
+.update-button {
     width: 120px;
     padding: 8px;
     font-size: 17px;
@@ -29,10 +33,17 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%,-50%);
-    transition: 0.8s;
+    transform: translate(-50%, -50%);
+    transition: 0.4s;
 }
-.update-button:hover{
+
+.update-button:hover {
     background-color: black;
     color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .card img {
+        width: 80%;
+    }
 }

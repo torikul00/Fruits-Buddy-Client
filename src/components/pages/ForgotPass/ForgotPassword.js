@@ -27,9 +27,9 @@ const ForgotPassword = () => {
     return (
         <div className='forgot-container'>
 
-            <form onSubmit={handleSubmit} className='forgot-info'>
+            <form  onSubmit={handleSubmit} className='forgot-info'>
                 <h2>Enter Your Email</h2>
-                <input type="email" name='email' />
+                <input autoComplete='off' type="email" name='email' />
                 {
                     error && <small style={{color:'red'}}>{ error}</small>
                 }

@@ -25,17 +25,28 @@ const Login = () => {
     }
 
     if (user) {
-
-        toast.success('Login succesful',{id:'login'})
         navigate(from, { replace: true });
-        
+        toast.success('Login succesful', { id: 'login' })
+
     }
     const handleSubmit = (e) => {
-        <Spinner />
+
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
         signInWithEmailAndPassword(email, password)
+        fetch('http://localhost:5000/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem('token', data.token)
+               
+            })
     }
 
     return (

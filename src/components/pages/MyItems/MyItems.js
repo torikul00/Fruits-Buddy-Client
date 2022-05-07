@@ -1,25 +1,78 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { useNavigate } from 'react-router-dom';
+import MyItemsCard from '../../MyitemsCard/MyItemsCard';
+import Spinner from '../../Spinner/Spinner';
 import './MyItems.css'
+import { signOut } from 'firebase/auth';
 const MyItems = () => {
     const [myItems, setMyItems] = useState([])
+    const [loading, setLoading] = useState(false)
     const [user] = useAuthState(auth)
-    const email = user.email
+    const [isFetch, setIsFetch] = useState(false)
+    const navigate = useNavigate()
+    const email = user?.email
     useEffect(() => {
-        fetch(`http://localhost:5000/orderItems?email=${email}`)
-        .then(res => res.json())
-        .then(data => setMyItems(data))
+        setLoading(true)
+        try {
+            fetch(`http://localhost:5000/orderItems?email=${email}`, {
+                method: 'GET',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    setMyItems(data)
+                    setLoading(false)
+                })
+        }
+        catch (error) {
+            navigate('/login')
+            signOut(auth)
 
-    },[email])
+        }
 
+    }, [email, isFetch])
+    const handleDelete = id => {
+        const confirmDelete = window.confirm('Are you sure to delete ?')
+        if (confirmDelete) {
 
-    return (
-        <div>
-            <h1>this is my items{ myItems.length}</h1>
+            if (confirmDelete) {
+                const url = `http://localhost:5000/fruit/${id}`
+                fetch(url, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
 
-        </div>
-    );
+                        if (data.deletedCount > 0) {
+                            setIsFetch(!isFetch)
+                        }
+                    })
+            }
+        }
+    }
+
+    if (loading) {
+        return <Spinner />
+    }
+    if (!loading) {
+        return (
+            <div className='card-container'>
+                {
+                    myItems.length ? myItems.map(item => <MyItemsCard key={item._id} item={item} handleDelete={handleDelete} />)
+                        :
+
+                        <div className='my-items'>
+                            <h1>No Items Added</h1>
+                        </div>
+                }
+
+            </div>
+        );
+    }
 };
 
 export default MyItems;

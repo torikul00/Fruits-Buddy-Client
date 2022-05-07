@@ -1,17 +1,20 @@
-.fruit-container{
+.fruit-container {
     width: 100%;
     margin: 30px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin-top: 70px;
+
 }
-.fruit-info{
+
+.fruit-info {
     width: 500px;
     padding: 20px;
-    -webkit-box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.6); 
-box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.6);
 }
+
 .fruit-info p {
     font-size: 18px;
     padding: 5px 5px;
@@ -19,43 +22,62 @@ box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.6);
     border-bottom: 1px solid rgba(0, 0, 0, 0.192);
     background-color: rgba(0, 0, 0, 0.048);
 }
+
 .img-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
 .fruit-info img {
     width: 70%;
 }
+
 .fruit-info h2 {
     text-align: center;
     margin: 10px 0px;
 }
-.update-item{
+
+.update-item {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-.quantity-update-button{
-    padding:  8px 20px;
+
+.quantity-update-button {
+    padding: 8px 20px;
     border: none;
     background-color: #006E7F;
     color: white;
     cursor: pointer;
 }
-.quantity-input{
+
+.quantity-input {
     padding: 5px;
-    
+
 }
-.delevery-button{
-   width: 150px;
-   display: block;
-   margin: 20px auto;
-   padding: 10px 0px;
-   border: none;
-   background-color: #006E7F;
-   font-size: 17px;
-   cursor: pointer;
-   color: white;
+
+.delevery-button {
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 0px;
+    border: none;
+    background-color: #006E7F;
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .fruit-info img {
+        width: 60%;
+    }
+    .fruit-info p{
+        font-size: 16px;
+    }
+    .fruit-info{
+        width: 300px;
+    }
 }

@@ -1,33 +1,36 @@
-.card-info-container{
+.card-info-container {
     width: 700px;
     margin: 20px 0px;
     height: 200px;
     padding: 0px 20px;
-    -webkit-box-shadow: 5px 5px 15px -5px #000000; 
-box-shadow: 5px 5px 15px -5px #000000;  
-  transition: 0.5s;
+    -webkit-box-shadow: 5px 5px 15px -5px #000000;
+    box-shadow: 5px 5px 15px -5px #000000;
+    transition: 0.5s;
 }
-.card-info-container:hover{
+
+.card-info-container:hover {
     transform: scale(1.05);
 }
-.card-info-container{
+
+.card-info-container {
     display: flex;
-    
     align-items: center;
 
 }
+
 .img img {
     width: 250px;
 }
-.card-info{
+
+.card-info {
     display: flex;
     justify-content: center;
-  
+
     flex-direction: column;
     margin: 0px 20px;
 }
 
-.delete-button{
+.delete-button {
     display: block;
     margin: 20px 0px;
     width: 150px;
@@ -40,10 +43,12 @@ box-shadow: 5px 5px 15px -5px #000000;
     cursor: pointer;
     transition: 0.4s;
 }
-.delete-button:hover{
+
+.delete-button:hover {
     background-color: rgba(255, 0, 0, 0.486);
 }
-.update-btn{
+
+.update-btn {
     border-radius: 5px;
     display: block;
     margin: 20px 0px;
@@ -54,8 +59,25 @@ box-shadow: 5px 5px 15px -5px #000000;
     color: white;
     font-size: 18px;
     cursor: pointer;
-   transition: 0.4s;
+    transition: 0.4s;
 }
-.update-btn:hover{
-    background-color:#006e7fc2 ;
+
+.update-btn:hover {
+    background-color: #006e7fc2;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-info-container {
+        width: 300px;
+        height: auto;
+        padding: 20px 0px;
+    }
+
+    .img img {
+        width: 150px;
+    }
+
+    .card-info-container {
+        flex-direction: column;
+    }
 }

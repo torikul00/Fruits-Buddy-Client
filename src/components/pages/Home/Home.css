@@ -10,9 +10,12 @@
     margin-top: 50px;
 }
 .banner-container {
-    position: relative;
+    background-image: url(../../images/banner.jpg);
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
 }
-
 .banner-sub-container {
     position: absolute;
     top: 50%;
@@ -20,6 +23,7 @@
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
+   
 }
 
 .banner-sub-container h1 {
@@ -117,13 +121,10 @@
     margin: 50px 0px;
     display: flex;
     justify-content: space-evenly;
- 
     align-items: center;
-    transition: 0.3s;
+    
 }
-/* .company img {
-    width: 200px;
-} */
+
 .walmart{
     width: 200px;
 }
@@ -133,3 +134,37 @@
 .target{
     width: 150px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .inventory-items {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        padding: 0px 40px;
+    }
+    .banner-sub-container h1 {
+        font-size: 30px;
+    }
+    .banner-sub-container p {
+        width: 100%;
+        font-size: 16px;
+        text-align: left;
+        letter-spacing: 0.7px;
+        
+    }
+    .companies-container{
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0px;
+
+    }
+   
+    .target{
+        margin: 50px 0px
+    }
+    .partner-title{
+        font-size: 28px;
+    }
+    
+  }

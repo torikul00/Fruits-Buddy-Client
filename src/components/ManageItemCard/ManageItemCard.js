@@ -14,8 +14,8 @@ const ManageItemCard = ({ item, handleItemDelete }) => {
             <div className="img"><img src={image ? image : 'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png'} alt="" /></div>
             <div className="card-info">
                 <h3>Name : {name}</h3>
-                <p>Price : {price} Per Sack</p>
-                <p> Quantiity {quantity} Per Sack</p>
+                <p>Price : ${price} Per Sack</p>
+                <p> Quantiity : {quantity} Sacks</p>
 
             </div>
             <div className="buttons">

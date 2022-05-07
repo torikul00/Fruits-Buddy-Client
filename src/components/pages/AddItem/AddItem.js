@@ -32,9 +32,9 @@ const AddItem = () => {
         <div className='add-item-container'>
             <form className='form' onSubmit={handleSubmit}>
                 <h1>Add new item</h1>
-                <input name='name' autoComplete='off' type="text" placeholder='Item Name' required />
+                <input name='name' autoComplete='off' type="text" placeholder='Fruit Name' required />
                 <input name='price' type="number" placeholder='Price per Sack' required />
-                <input name='quantity' type="number" placeholder='Quantity of Sacks' required />
+                <input name='quantity' type="number" placeholder='Quantity of Sack' required />
                 <input name='imgURL' autoComplete='off' type="text" placeholder='Image URL' />
                 <input name='supplier' autoComplete='off' type="text" placeholder='Supplier' required />
                 <textarea autoComplete='off' name="desc" placeholder='Description' required cols="30" rows="5"></textarea>

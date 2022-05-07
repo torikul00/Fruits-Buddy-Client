@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import ManageItemCard from '../../ManageItemCard/ManageItemCard';
 import Spinner from '../../Spinner/Spinner';
-import './ManageItem.css'
+import './ManageItem.css'   
 const ManageItems = () => {
     const [items, setItems,loading] = useItems()
     const navigate = useNavigate()
@@ -34,8 +34,6 @@ const ManageItems = () => {
     if (!loading) {
         return (
             <>
-                 
-            
                 <div className="card-container">
                     {
                         items?.map(item => <ManageItemCard key={item._id} item={item} handleItemDelete={handleItemDelete} />)

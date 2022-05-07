@@ -13,7 +13,7 @@ import target from '../../images/logos/target.png'
 import gebber from '../../images/logos/gebber.png'
 import walmart from '../../images/logos/walmart.png'
 const Home = () => {
-  const [items, setItems, loading] = useItems()
+  const [items, , loading] = useItems()
   const navigate = useNavigate()
   const responsive = {
     superLargeDesktop: {
@@ -35,7 +35,6 @@ const Home = () => {
       items: 1
     }
   };
-  console.log(loading)
 
   if (loading) {
     return <Spinner />
@@ -44,7 +43,7 @@ const Home = () => {
     return (
       <>
         <div className='banner-container'>
-          <img className='banner' src={banner} alt="" />
+        
           <div className='banner-sub-container'>
             <h1>Welcome to Fruits Buddy</h1>
             <p>Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. Eating a diet high in fruits and vegetables can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.</p>
@@ -114,7 +113,7 @@ const Home = () => {
           </div>
 
           <div className="company">
-          <img className='target' src={target} alt="" />
+            <img className='target' src={target} alt="" />
           </div>
 
           <div className="company">
@@ -122,7 +121,7 @@ const Home = () => {
           </div>
 
           <div className="company">
-          
+
             <img className='amazon' src={amazon} alt="" />
           </div>
 
