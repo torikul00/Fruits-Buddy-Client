@@ -9,10 +9,10 @@ const Footer = () => {
         <div className='footer-container'>
             <footer>
                 <h3>Follow Us </h3>
-                <a href="https://www.google.com"><BsFacebook className='icon' /></a>
-                <a href="https://www.google.com"><BsInstagram className='icon' /></a>
-                <a href="https://www.google.com"><BsYoutube className='icon' /></a>
-                <a href="https://www.google.com"><BsLinkedin className='icon' /></a> <br />
+                <a target='_blank' href="https://www.facebook.com/timutorikul/"><BsFacebook className='icon' /></a>
+                <a target='_blank' href="https://www.instagram.com/itstorikul/?hl=en"><BsInstagram className='icon' /></a>
+                <a target='_blank' href="https://www.youtube.com/channel/UCadEO1uyZBF3n4Az_3PPpIw"><BsYoutube className='icon' /></a>
+                <a target='_blank' href="https://www.linkedin.com/in/timutorikul/"><BsLinkedin className='icon' /></a> <br />
                 <h3> &copy; - Torikul Islam - {year} </h3>
            </footer>
         </div>

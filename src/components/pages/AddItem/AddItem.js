@@ -14,7 +14,7 @@ const AddItem = () => {
         const desc = e.target.desc.value
         const sup_name = e.target.supplier.value
         const data = { name, price, quantity, image, desc, sup_name, email }
-        fetch('http://localhost:5000/fruits', {
+        fetch('https://gentle-plateau-90897.herokuapp.com/fruits', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

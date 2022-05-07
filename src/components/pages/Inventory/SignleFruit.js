@@ -9,7 +9,7 @@ const SignleFruit = () => {
     const { id } = useParams()
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/fruits/${id}`)
+        fetch(`https://gentle-plateau-90897.herokuapp.com/fruits/${id}`)
             .then(res => res.json())
             .then(data => {
                 setFruit(data)
@@ -34,7 +34,7 @@ const SignleFruit = () => {
         else {
             const totalQuantity = parseInt(fruit.quantity) + parseInt(quantity)
             const updateQuantity = { quantity: totalQuantity }
-            fetch(`http://localhost:5000/fruit/${id}`, {
+            fetch(`https://gentle-plateau-90897.herokuapp.com/fruit/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -53,7 +53,7 @@ const SignleFruit = () => {
         if (fruit.quantity > 0) {
             const totalQuantity = parseInt(fruit.quantity) - 1
             const updateQuantity = { quantity: totalQuantity }
-            fetch(`http://localhost:5000/fruit/${id}`, {
+            fetch(`https://gentle-plateau-90897.herokuapp.com/fruit/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

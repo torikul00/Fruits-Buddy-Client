@@ -16,7 +16,7 @@ const MyItems = () => {
     useEffect(() => {
         setLoading(true)
         try {
-            fetch(`http://localhost:5000/orderItems?email=${email}`, {
+            fetch(`https://gentle-plateau-90897.herokuapp.com/orderItems?email=${email}`, {
                 method: 'GET',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('token')}`
@@ -29,6 +29,7 @@ const MyItems = () => {
                 })
         }
         catch (error) {
+            console.log(error)
             navigate('/login')
             signOut(auth)
 
@@ -40,7 +41,7 @@ const MyItems = () => {
         if (confirmDelete) {
 
             if (confirmDelete) {
-                const url = `http://localhost:5000/fruit/${id}`
+                const url = `https://gentle-plateau-90897.herokuapp.com/fruit/${id}`
                 fetch(url, {
                     method: 'DELETE',
                 })

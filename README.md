@@ -1,6 +1,6 @@
 # Welcome to Fruit Buddy
 
-Live site  [Here](https://github.com/facebook/create-react-app).
+Live site  [Here](https://fruits-buddy.web.app/).
 
 ## Packages Need
 

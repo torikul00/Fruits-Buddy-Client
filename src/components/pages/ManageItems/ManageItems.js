@@ -10,7 +10,7 @@ const ManageItems = () => {
     const handleItemDelete = id => {
         const confirmDelete = window.confirm('Are you sure to delete ?')
         if (confirmDelete) {
-            const url = `http://localhost:5000/fruit/${id}`
+            const url = `https://gentle-plateau-90897.herokuapp.com/fruit/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

@@ -35,7 +35,7 @@ const Login = () => {
         const email = e.target.email.value
         const password = e.target.password.value
         signInWithEmailAndPassword(email, password)
-        fetch('http://localhost:5000/login', {
+        fetch('https://gentle-plateau-90897.herokuapp.com/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
