@@ -92,12 +92,15 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
-    
+    .logo{
+        font-size: 20px;
+    }
     .navbar-links{
       display: none;
     }
-    .nav{
-        height: 70px;
+    nav{
+        padding: 0px 30px;
+       
     }
     .toggle-menu{
         display: block;

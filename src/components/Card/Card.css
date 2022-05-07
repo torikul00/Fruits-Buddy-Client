@@ -46,4 +46,8 @@
     .card img {
         width: 80%;
     }
+    .card{
+        height: 420px;
+    }
+   
 }

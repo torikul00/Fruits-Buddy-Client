@@ -34,8 +34,11 @@
         font-size: 20px;
         color: cadetblue;
     }
+    .blog p {
+        font-size: 16px;
+    }
     .blog {
-        width: 400px;
+        width: 250px;
     }
     
 }

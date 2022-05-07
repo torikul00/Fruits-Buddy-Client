@@ -143,6 +143,9 @@
         grid-gap: 10px;
         padding: 0px 40px;
     }
+    .banner-sub-container {
+        margin-top: 50px;
+    }
     .banner-sub-container h1 {
         font-size: 30px;
     }
@@ -153,11 +156,18 @@
         letter-spacing: 0.7px;
         
     }
+    .banner-sub-container{
+        width: 80%;
+    }
     .companies-container{
         flex-direction: column;
         height: auto;
         padding: 20px 0px;
 
+    }
+    .reg-button {
+        width: 200px;
+        margin: 5px 0px;
     }
    
     .target{
@@ -166,5 +176,11 @@
     .partner-title{
         font-size: 28px;
     }
-    
+    .carousel-title{
+        font-size: 27px;
+    }
+    .carousel-item h1{
+        font-size: 20px;
+    }
+
   }
