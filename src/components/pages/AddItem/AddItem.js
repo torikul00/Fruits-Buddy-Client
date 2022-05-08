@@ -13,6 +13,7 @@ const AddItem = () => {
         const image = e.target.imgURL.value
         const desc = e.target.desc.value
         const sup_name = e.target.supplier.value
+        
         const data = { name, price, quantity, image, desc, sup_name, email }
         fetch('https://gentle-plateau-90897.herokuapp.com/fruits', {
             method: 'POST',

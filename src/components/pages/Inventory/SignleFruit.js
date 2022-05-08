@@ -64,7 +64,7 @@ const SignleFruit = () => {
                 .then(() => {
 
                     setisReload(!isReload)
-                    window.alert('1 sack delevered seccessful')
+                    window.alert('1 Sack delevered seccessful')
                 })
         }
         else {
@@ -72,15 +72,15 @@ const SignleFruit = () => {
         }
     }
     if (loading) {
-       return <Spinner />
+        return <Spinner />
     }
     if (!loading) {
         return (
             <div className='fruit-container'>
                 <div className="fruit-info">
                     <div className='img-container'>
-                    <img src={fruit.image ? fruit.image : 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640'} alt="" />
-                   </div>
+                        <img src={fruit.image ? fruit.image : 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640'} alt="" />
+                    </div>
                     <h2>{fruit.name}</h2>
                     <p>{fruit.desc}</p>
                     <br />
@@ -88,14 +88,14 @@ const SignleFruit = () => {
                     <p>Quantity : {fruit.quantity} Sacks</p>
                     <p> Supplier : {fruit.sup_name}</p>
                     <p>ID : {fruit._id}</p>
-    
+
                     <form onSubmit={handleQuantity} className="update-item">
                         <input className='quantity-input' type="number" placeholder='Add Quantity' name='quantity' />
                         <button type='submit' className='quantity-update-button'>Restock Item</button>
                     </form>
                     <button onClick={handleDelever} className='delevery-button'>Delevered</button>
                 </div>
-    
+
             </div>
         );
     }

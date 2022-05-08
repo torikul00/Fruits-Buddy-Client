@@ -68,16 +68,25 @@
     font-size: 17px;
     cursor: pointer;
     color: white;
+    border-radius: 4px;
+    transition: 0.4s;
+
+}
+.delevery-button:hover {
+    background-color: black;
+    color: white;
 }
 
 @media only screen and (max-width: 600px) {
     .fruit-info img {
         width: 60%;
     }
-    .fruit-info p{
+
+    .fruit-info p {
         font-size: 16px;
     }
-    .fruit-info{
+
+    .fruit-info {
         width: 300px;
     }
 }
