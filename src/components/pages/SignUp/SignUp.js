@@ -14,13 +14,14 @@ const SignUp = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        loading
+        loading,
+        error
     ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate()
     const { signInWithGoogle } = useSocialLogin()
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-   
+    const userEmail = email.value
     const handleEmail = email => {
 
         if (/^\S+@\S+\.\S+$/.test(email)) {
@@ -52,33 +53,37 @@ const SignUp = () => {
         }
     }
     if (loading) {
-
-        
         return <Spinner />
-       
 
     }
     if (user) {
         navigate(from, { replace: true });
+
+
+        toast.success('SignUp Successful', { style: { backgroundColor: 'black', color: 'white' }, id: 'signup' })
+
     }
     const handleSubmit = e => {
-       
+
         e.preventDefault()
         if (email.value && password.value && confirmPassword.value) {
 
-        //    Creating a new user
+            //    Creating a new user
             createUserWithEmailAndPassword(email.value, password.value)
                 .then(() => {
                     // sent email verification 
                     sendEmailVerification(auth.currentUser)
-                    .then(() => {
-                        alert('Email verification sent')
-                    });
-                    toast.success('SignUp Successful', { style: { backgroundColor: 'black', color: 'white' } })
+                        .then(() => {
+                            alert('Email verification sent')
+                        });
+
                 })
                 .catch(() => {
                     toast.error('something went wrong')
                 })
+
+
+
         }
 
 
@@ -86,7 +91,7 @@ const SignUp = () => {
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit} className='form'>
-            
+
                 <h1> SignUp Here</h1>
 
                 {
@@ -101,6 +106,9 @@ const SignUp = () => {
                     confirmPassword?.error && <small style={{ color: 'red' }}>{confirmPassword.error}</small>
                 }
                 <input onBlur={(e) => handleConfirmPassword(e.target.value)} type="password" placeholder='Confirm Password' required />
+                {
+                    error && <small style={{ color: 'red' }}>Email already exist</small>
+                }
                 <button className='login-button' type='submit'>SignUp</button>
                 <p>Already Registered ? <Link className='form-link' to='/login'>Login </Link> </p>
                 <div className="horizontal-line">

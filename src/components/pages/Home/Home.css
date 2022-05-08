@@ -1,5 +1,6 @@
 .banner {
     width: 100%;
+   
     height: calc(100vh - 60px);
 }
 .inventory-items {
@@ -8,6 +9,7 @@
     grid-gap: 20px;
     padding: 0px 80px;
     margin-top: 50px;
+    max-width: 1400px;
 }
 .banner-container {
     background-image: url(../../images/banner.jpg);
@@ -183,4 +185,9 @@
         font-size: 20px;
     }
 
+  }
+  @media only screen and (min-width: 1400px) {
+      .inventory-items{
+          margin: 50px auto;
+      }
   }

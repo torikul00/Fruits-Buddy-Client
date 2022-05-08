@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../../Card/Card';
 import useItems from '../../hooks/useItems';
-import banner from '../../images/banner.jpg'
 import './Home.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
